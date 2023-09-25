@@ -2,7 +2,7 @@
 
 
 void quick(int *array, size_t size, int min, int max);
-int partition(int *array, size_t size, int min, int max);
+int Lomuto_partition(int *array, size_t size, int min, int max);
 void swap(int *a, int *b);
 /**
  * swap - Swaps two integer values.
@@ -44,7 +44,7 @@ void quick(int *array, size_t size, int min, int max)
 {
 	if (min < max)
 	{
-		int pivot = partition(array, size, min, max);
+		int pivot = Lomuto_partition(array, size, min, max);
 
 		quick(array, size, 0, pivot - 1);
 		quick(array, size, pivot + 1, max);
@@ -59,7 +59,7 @@ void quick(int *array, size_t size, int min, int max)
  *
  * Return: The index of the pivot element after partitioning.
  */
-int partition(int *array, size_t size, int min, int max)
+int Lomuto_partition(int *array, size_t size, int min, int max)
 {
 	int pivot = array[max];
 	int i = min - 1, j;
